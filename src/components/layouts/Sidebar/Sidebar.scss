@@ -1,0 +1,25 @@
+.sidebar {
+  @apply w-sidebar-width min-h-sidebar-height py-[40px] px-[35px] bg-white border-r-1 border-app-border;
+
+  .app-logo {
+    @apply mx-auto;
+  }
+
+  .sidebar-nav {
+    @apply mt-[70px] flex flex-col gap-11;
+
+    .nav-title {
+      @apply text-[13px] text-normal-font font-bold ml-3 mb-3;
+    }
+
+    
+    .sidebar-option {
+      @apply flex gap-[10px] text-dark-font py-3 px-3 mb-2 transition-all duration-100 ease-in-out;
+    }
+
+    
+    .sidebar-option__active {
+      @apply text-primary-normal font-semibold bg-primary-light rounded-md border-l-[4px] border-primary-normal;
+    }
+  }
+}

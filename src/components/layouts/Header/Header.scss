@@ -1,0 +1,11 @@
+.header {
+  @apply h-header-height w-full flex items-center justify-between border-b-1 border-app-border bg-none px-[60px];
+
+  &__title {
+    @apply text-title-font text-2xl font-bold;
+  }
+
+  &__features {
+    @apply flex gap-12;
+  }
+}

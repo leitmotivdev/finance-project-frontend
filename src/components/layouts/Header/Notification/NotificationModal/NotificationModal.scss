@@ -1,0 +1,15 @@
+.notifications-modal {
+  @apply w-[349px] bg-white border rounded-xl absolute top-10 right-0 p-4;
+
+  &__title {
+    @apply text-sm text-left pl-2 font-semibold;
+  }
+
+  &__container {
+    @apply flex flex-col my-3;
+  }
+
+  &__seemore {
+    @apply text-sm text-primary-normal cursor-pointer w-full text-left border-t-1 border-app-border px-2 pt-4;
+  }
+}

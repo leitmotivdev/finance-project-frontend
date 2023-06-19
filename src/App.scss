@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  
+  :root {
+    /* Color Palletes */
+    --primary-light: #ecf6ff;
+    --primary-normal: #3da9fc;
+    --secundary-normal: #ef4565;
+    --tertiary: #094067;
+
+    /* Base Colors */
+    --app-white: #fff;
+    --app-green: #4bdb24;
+    --app-red: #DB2424;
+    --app-gray: #47515C;
+
+    /* Font Colors */
+    --normal-font: #5f6c7b;
+    --dark-font: #39414a;
+    --title-font: #041d2e;
+
+    /* Custom Elements */
+    --main-bg: #fcfcfc;
+
+    /* Border */
+    --app-border: #e7e9eb;
+
+    /* Sizes */
+    --header-height: 80px;
+
+    --sidebar-width: 300px;
+    --sidebar-height: 100vh;
+
+
+    --dark-light: #eff0f2;
+    --dark-normal: #5f6c7b;
+    --dark-blue: #031624;
+
+  }
+
+}
+
+/* ======= Inter Fonts ======= */
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), local("Inter-regular"),
+    url("/src/assets/fonts/inter/Inter-Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), local("Inter-Medium"),
+    url("/src/assets/fonts/inter/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), local("Inter-Bold"),
+    url("/src/assets/fonts/inter/Inter-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  @apply bg-main-bg;
+}

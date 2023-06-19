@@ -1,0 +1,18 @@
+.notification-item {
+  @apply rounded-md flex cursor-pointer active:bg-primary-light hover:bg-primary-light active:text-primary-normal hover:text-primary-normal gap-2 p-[10px];
+
+  &__icon {
+    @apply self-start mt-1;
+  }
+  &__message {
+    @apply text-sm text-left text-dark-font;
+  }
+  
+  &__date {
+    @apply text-[12px] text-left text-[#5F6C7B] block mt-1;
+  }
+
+  &:hover > div > &__message {
+    @apply text-primary-normal;
+  }
+}

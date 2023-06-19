@@ -1,0 +1,12 @@
+.admin {
+  @apply w-screen flex;
+
+  &-content {
+    @apply w-full;
+    
+    &__section {
+      @apply px-[60px] py-10;
+    }
+
+  }
+}

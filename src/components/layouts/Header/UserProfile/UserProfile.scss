@@ -1,0 +1,19 @@
+.user-profile {
+  @apply flex items-center gap-3;
+}
+
+.user {
+  &__icon {
+    @apply w-11 h-11;
+  }
+
+  &__range {
+    h2 {
+      @apply text-title-font font-black text-[13px] -mb-1;
+    }
+
+    p {
+      @apply text-title-font text-[12px];
+    }
+  }
+}
