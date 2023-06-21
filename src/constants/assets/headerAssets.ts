@@ -1,4 +1,4 @@
-import { ICON_HEADER_PATH } from './path';
+import { ICON_HEADER_PATH } from '../path';
 
 const assets = {
   notificationIcon: `${ICON_HEADER_PATH}/notification-icon.svg`,

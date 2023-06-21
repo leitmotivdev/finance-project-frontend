@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './NotificationItem.scss';
-import { circleBlue } from '../../../../../constants/headerAssets';
+import { circleBlue } from '../../../../../constants/assets/headerAssets';
 
 export interface NotificationItemProps {
   content: string;

@@ -1,4 +1,4 @@
-import { arrowIcon, profile } from '../../../../constants/headerAssets';
+import { arrowIcon, profile } from '../../../../constants/assets/headerAssets';
 import './UserProfile.scss';
 
 export const UserProfile = () => {

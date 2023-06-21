@@ -1,0 +1,7 @@
+.wallet-header {
+  @apply w-4/5 overflow-x-auto flex;
+}
+
+.wallet-list {
+  @apply flex gap-6 w-full items-center justify-start flex-nowrap;
+}

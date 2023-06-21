@@ -1,7 +1,7 @@
 import './Sidebar.scss';
 
 import { NavLink, useLocation } from 'react-router-dom';
-import { ICON_SIDEBAR_PATH } from '../../../constants/path';
+import { ICON_SIDEBAR_PATH, LOGO_IMAGE } from '../../../constants/path';
 
 export const Sidebar = () => {
 
@@ -9,7 +9,7 @@ export const Sidebar = () => {
 
   const sidebarMenuOptions = [
     { name: 'Dashboard', icon: 'dashboard-icon', path: '/dashboard' },
-    { name: 'Wallet', icon: 'egresos-icon', path: '/egresos' },
+    { name: 'Wallet', icon: 'egresos-icon', path: '/wallet' },
     { name: 'Prestamos', icon: 'prestamos-icon', path: '/prestamos' },
     { name: 'Créditos', icon: 'creditos-icon', path: '/creditos' },
   ];
@@ -19,11 +19,10 @@ export const Sidebar = () => {
     { name: 'Ayuda', icon: 'ayuda-icon', path: '/ayuda' },
   ];
 
-
   return (
     <aside className="sidebar">
       <picture className="app-logo-container">
-        <img className="app-logo" src="public/images/finance-app-logo.svg" />
+        <img className="app-logo" src={LOGO_IMAGE} />
       </picture>
 
       <nav className="sidebar-nav">

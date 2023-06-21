@@ -1,5 +1,5 @@
 import './NotificationButton.scss';
-import { notificationIcon } from '../../../../../constants/headerAssets';
+import { notificationIcon } from '../../../../../constants/assets/headerAssets';
 
 import { useEffect, useRef, useState } from 'react';
 import NotificationModal from '../NotificationModal/NotificationModal';
