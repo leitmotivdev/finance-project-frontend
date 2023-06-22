@@ -8,15 +8,15 @@ export const Sidebar = () => {
   const location = useLocation();
 
   const sidebarMenuOptions = [
-    { name: 'Dashboard', icon: 'dashboard-icon', path: '/dashboard' },
-    { name: 'Wallet', icon: 'egresos-icon', path: '/wallet' },
-    { name: 'Prestamos', icon: 'prestamos-icon', path: '/prestamos' },
-    { name: 'Créditos', icon: 'creditos-icon', path: '/creditos' },
+    { name: 'Dashboard', icon: 'dashboard-icon', path: '/admin/dashboard' },
+    { name: 'Wallet', icon: 'egresos-icon', path: '/admin/wallet' },
+    { name: 'Prestamos', icon: 'prestamos-icon', path: '/admin/prestamos' },
+    { name: 'Créditos', icon: 'creditos-icon', path: '/admin/creditos' },
   ];
 
   const sidebarHelpOptions = [
-    { name: 'Configuraciones', icon: 'configuraciones-icon', path: '/configuraciones' },
-    { name: 'Ayuda', icon: 'ayuda-icon', path: '/ayuda' },
+    { name: 'Configuraciones', icon: 'configuraciones-icon', path: '/admin/configuraciones' },
+    { name: 'Ayuda', icon: 'ayuda-icon', path: '/admin/ayuda' },
   ];
 
   return (
