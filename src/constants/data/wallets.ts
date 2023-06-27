@@ -1,23 +1,34 @@
-export const walletsFake = [
+import { EnumWalletType, Wallet } from '../../interfaces/Wallet';
+
+export const walletsFake: Wallet[] = [
   {
     id: 1,
-    accountBalance: 24500.12,
+    balance: 24500.12,
     accountNumber: '0921',
-    accountColor: '#9D86DF',
-    accountName: 'SAVINGS',
+    color: '#9D86DF',
+    name: 'SAVINGS',
+    closingDate: null,
+    dueDate: null,
+    type: EnumWalletType.DEBIT,
   },
   {
     id: 2,
-    accountBalance: 809.07,
+    balance: 809.07,
     accountNumber: '2981',
-    accountColor: '#DF8686',
-    accountName: 'PERSONAL',
+    color: '#DF8686',
+    name: 'PERSONAL',
+    closingDate: null,
+    dueDate: null,
+    type: EnumWalletType.DEBIT,
   },
   {
     id: 3,
-    accountBalance: 576.8,
+    balance: 576.8,
     accountNumber: '7912',
-    accountColor: '#86CADF',
-    accountName: 'EXPENSES',
+    color: '#86CADF',
+    name: 'EXPENSES',
+    closingDate: null,
+    dueDate: null,
+    type: EnumWalletType.CREDIT,
   },
 ];

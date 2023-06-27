@@ -1,7 +1,17 @@
+export enum EnumWalletType {
+  CREDIT = 'credit',
+  DEBIT = 'debit',
+  SERVICE = 'service',
+  CASH = 'cash',
+}
+
 export interface Wallet {
-  accountBalance: number;
+  balance: number;
   accountNumber: string;
-  accountColor: string;
-  accountName: string;
+  color: string;
+  name: string;
+  type: EnumWalletType;
+  closingDate: string | null;
+  dueDate: string | null;
   id: number;
 }
