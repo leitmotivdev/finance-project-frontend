@@ -1,8 +1,8 @@
 import './Admin.scss';
 
 import { Outlet } from 'react-router-dom';
-import { Sidebar } from '../Sidebar/Sidebar';
 import { Header } from '../Header/Header';
+import { Sidebar } from '../Sidebar/Sidebar';
 
 export const Admin = () => {
   return (
@@ -16,4 +16,4 @@ export const Admin = () => {
       </div>
     </main>
   );
-};
+}; 
