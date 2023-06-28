@@ -1,6 +1,6 @@
 import './UserProfile.scss';
 import { useAuth0 } from '@auth0/auth0-react';
-import { arrowIcon, profile } from '../../../../constants/assets/headerAssets';
+import { arrowIcon } from '../../../../constants/assets/headerAssets';
 
 export const UserProfile = () => {
   const {
@@ -16,11 +16,8 @@ export const UserProfile = () => {
       }
     });
 
-  console.log('isAuthenticated', isAuthenticated);
-
   return (
     <div className="user-profile">
-      <button onClick={logoutWithRedirect}>Log out</button>
       <div className="user__icon">
         <img
           src={user?.picture}
@@ -33,7 +30,7 @@ export const UserProfile = () => {
       </div>
 
       <div className="user__arrow-icon">
-        <button>
+        <button onClick={logoutWithRedirect}>
           <img
             src={arrowIcon}
             alt="arrow-user-icon"

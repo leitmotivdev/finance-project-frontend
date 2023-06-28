@@ -1,0 +1,22 @@
+.screen-loading {
+  @apply w-screen h-screen bg-white fixed top-0 left-0 z-10 flex items-center justify-center flex-col;
+
+  &__bar {
+    @apply shadow-none flex flex-col text-center rounded-lg whitespace-nowrap text-white justify-center bg-primary-normal w-[50%] transition-all duration-1000;
+
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: bar;
+
+    @keyframes bar {
+      0%, 100% {
+        transform: translateX(-50%);
+      }
+      50% {
+        transform: translateX(150%);
+      }
+    }
+  }
+
+
+}

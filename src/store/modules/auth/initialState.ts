@@ -1,9 +1,10 @@
 export interface AuthState {
   authorization: string | null;
+  userSub: string;
 }
 
-const initialState: AuthState = {
+export const initialState: AuthState = {
   authorization: null,
+  userSub: '',
 };
 
-export default initialState;
