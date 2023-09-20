@@ -1,9 +1,9 @@
 import './Header.scss';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { findRoute } from '../../../routes/routes';
 import { UserProfile } from './UserProfile/UserProfile';
 import { NotificationButton } from './Notification/NotificationButton/NotificationButton';
-import { useEffect, useState } from 'react';
-import { findRoute } from '../../../routes/routes';
 
 export const Header = () => {
   const [routeName, setRouteName] = useState('');
