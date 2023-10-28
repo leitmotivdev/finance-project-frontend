@@ -1,14 +1,15 @@
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+
 import {
   AxiosParams,
   CallbackParams,
   AxiosCustomRequest,
+  I$Axios,
 } from './config.interface';
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
-import { getAuthorizationToken } from '../helpers/authorization';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const processBody = (response: AxiosResponse) => response.data;
+const process = (response: AxiosResponse) => response.data;
 
 const processParamsUrl = (url: string, params: AxiosParams) => {
   let urlResult = url;
@@ -21,52 +22,54 @@ const processParamsUrl = (url: string, params: AxiosParams) => {
 };
 
 const axiosCallBack = (
+  method: string,
   url: string,
-  config?: AxiosCustomRequest
-): CallbackParams => {
-  let URL = url;
-  const CONFIG: AxiosRequestConfig = {};
+  config?: AxiosCustomRequest,
+): AxiosRequestConfig => {
+  const request:  AxiosRequestConfig = {
+    method,
+    url,
+  };
 
-  if (!config) return [URL, undefined];
+  if (!config) return request;
 
-  if (config.params) URL = processParamsUrl(url, config.params);
-  if (config.query) CONFIG.params = config.query;
-  if (config.data) CONFIG.data = config.data;
+  if (config.params) request.url = processParamsUrl(url, config.params);
+  if (config.query) request.params = config.query;
+  if (config.body) request.data = config.body;
 
-  return [URL, CONFIG];
+  return request;
 };
 
 export const apiConfig = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-type': 'application/json',
-    Accept: 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Accept': 'application/json',
   },
 });
 
-export const addAxiosAuthorization = () => {
-  const authorization = getAuthorizationToken();
-
+export const addAxiosAuthorization = (authorization: string) => {
+  // const authorization = getAuthorizationToken();
   if (authorization) {
-    apiConfig.defaults.headers.common.Authorization = authorization;
+    apiConfig.defaults.headers.common.Authorization = `Bearer ${authorization}`;
   }
 };
 
-export const $axios = {
-  get: (url: string, config?: AxiosCustomRequest) => {
-    const [URL, CONFIG] = axiosCallBack(url, config);
-    return apiConfig.get(URL, CONFIG).then(processBody);
+export const $axios: I$Axios = {
+  get: (url, config?) => {
+    return apiConfig(axiosCallBack('GET', url, config)).then(process);
   },
-  post: (url: string, config?: AxiosCustomRequest) => {
-    const [URL, CONFIG] = axiosCallBack(url, config);
-    return apiConfig.post(URL, CONFIG).then(processBody);
+
+  post: (url, config?) => {
+    return apiConfig(axiosCallBack('POST', url, config)).then(process);
   },
-  put: (url: string, config?: AxiosCustomRequest) => {
-    const [URL, CONFIG] = axiosCallBack(url, config);
-    return apiConfig.put(URL, CONFIG).then(processBody);
+
+  put: (url, config?) => {
+    return apiConfig(axiosCallBack('PUT', url, config)).then(process);
   },
-  delete: (url: string, config?: AxiosCustomRequest) => {
-    const [URL, CONFIG] = axiosCallBack(url, config);
-    return apiConfig.delete(URL, CONFIG).then(processBody);
+
+  delete: (url, config?) => {
+    return apiConfig(axiosCallBack('DELETE', url, config)).then(process);
   },
 };

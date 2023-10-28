@@ -23,6 +23,10 @@ module.exports = {
         'normal-font': 'var(--normal-font)',
         'dark-font': 'var(--dark-font)',
         'title-font': 'var(--title-font)',
+
+        'bold-title': 'var(--bold-title)',
+        'main-text': 'var(--main-text)',
+        'normal-text': 'var(--normal-text)',
       },
       width: {
         'sidebar-width': 'var(--sidebar-width)',

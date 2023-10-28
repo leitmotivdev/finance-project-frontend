@@ -1,10 +1,17 @@
 export interface AuthState {
   authorization: string | null;
-  userSub: string;
+  sub: string;
+  profile: {
+    name: string;
+  }
 }
 
 export const initialState: AuthState = {
   authorization: null,
-  userSub: '',
+  sub: '',
+
+  profile: {
+    name: '',
+  }
 };
 

@@ -1,0 +1,34 @@
+.create-profile {
+  @apply w-1/2 h-screen mx-auto flex items-center justify-center;
+  &__title {
+    @apply text-3xl font-bold text-center text-bold-title;
+
+    .active-title {
+      @apply text-primary-normal;
+    }
+  }
+
+  &__description {
+    @apply text-xl mt-4 text-main-text text-center;
+  }
+
+  &__input {
+    @apply transition-all bg-primary-light duration-300 ease-in-out text-lg block p-4 w-[400px] border-primary-normal border-2 rounded-md mt-10 mx-auto outline-none;
+  
+    &:focus {
+      @apply shadow-2xl;
+    }
+  }
+
+  &__button {
+    @apply transition-all duration-300 ease-in-out p-4 w-[400px] flex justify-center border-2 border-transparent bg-primary-normal py-4 px-10 rounded-md items-center gap-3 mx-auto mt-4 font-bold text-lg text-white;
+  
+    &:hover {
+      @apply opacity-80;
+    }
+
+    &:disabled {
+      @apply opacity-0;
+    }
+  }
+}

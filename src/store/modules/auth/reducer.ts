@@ -1,15 +1,17 @@
+import { IsetUpAuthState } from '../../../interfaces/auth/reducer.interfaces';
 import { AuthState } from './initialState';
 import { PayloadAction } from '@reduxjs/toolkit';
 
 const authReducer = {
-  setUserSub(state: AuthState, { payload }: PayloadAction<string>) {
-    state.userSub = payload;
+  setUpAuthState(state: AuthState, { payload }: PayloadAction<IsetUpAuthState>) {
+    const { authorization, sub, profileName } = payload;
+
+    state.sub = sub;
+    state.profile.name = profileName;
+    state.authorization = authorization;
+
     return state;
-  },
-  setUserAuthorization(state: AuthState, { payload }: PayloadAction<string>) {
-    state.authorization = payload;
-    return state;
-  },
+  }
 };
 
 export default authReducer;

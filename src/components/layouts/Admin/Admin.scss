@@ -2,7 +2,7 @@
   @apply w-screen flex;
 
   &-content {
-    @apply w-full;
+    width: calc(100% - 300px);
     
     &__section {
       @apply px-[60px] py-10;

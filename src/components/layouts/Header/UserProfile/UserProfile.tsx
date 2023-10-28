@@ -1,8 +1,11 @@
 import './UserProfile.scss';
 import { useAuth0 } from '@auth0/auth0-react';
 import { arrowIcon } from '../../../../constants/assets/headerAssets';
+import { useAppSelector } from '../../../../store/hooks';
 
 export const UserProfile = () => {
+  const nameProfile = useAppSelector(({ auth }) => auth.profile.name);
+
   const {
     user,
     isAuthenticated,
@@ -25,7 +28,7 @@ export const UserProfile = () => {
         />
       </div>
       <div className="user__range">
-        <h2>{isAuthenticated ? user?.name : 'Edgar Salas'}</h2>
+        <h2>{isAuthenticated && nameProfile}</h2>
         <p> Administrador</p>
       </div>
 

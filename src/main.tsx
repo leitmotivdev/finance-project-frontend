@@ -9,10 +9,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Provider store={store}>
     <BrowserRouter>
       <Auth0Provider
-        domain="finance-leitmotiv.us.auth0.com"
+        domain="https://finance-leitmotiv.us.auth0.com"
         clientId="XTt8E694tkQuCXioI0ilRxFGmBuOH5wn"
         authorizationParams={{
           redirect_uri: window.location.origin + '/admin/dashboard',
+          audience: 'https://finance-leitmotiv.us.auth0.com/api/v2/',
         }}
       >
         <App />
