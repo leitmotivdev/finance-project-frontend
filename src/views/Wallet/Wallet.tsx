@@ -1,8 +1,7 @@
 import './Wallet.scss';
-
-import { ButtonAddWallet } from '../../components/admin/wallet/ButtonAddWallet/ButtonAddWallet';
-import { CardWallet } from '../../components/admin/wallet/CardWallet/CardWallet';
 import { walletsFake } from '../../constants/data/wallets';
+import { CardWallet } from '../../components/admin/wallet/CardWallet/CardWallet';
+import { ButtonAddWallet } from '../../components/admin/wallet/ButtonAddWallet/ButtonAddWallet';
 
 export const Wallet = () => {
   return (
@@ -13,7 +12,6 @@ export const Wallet = () => {
           {walletsFake.map((wallet) => (<CardWallet key={wallet.id} wallet={wallet} />))}
         </div>
       </div>
-
     </>
   );
 };

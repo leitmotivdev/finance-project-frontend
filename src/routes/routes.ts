@@ -1,4 +1,3 @@
-
 export type JsxComponent = () => JSX.Element;
 
 export interface RouteApp {
@@ -10,14 +9,19 @@ export interface RouteApp {
 const routes: RouteApp[] = [
   {
     path: 'dashboard',
-    to: '/dashboard',
+    to: '/admin/dashboard',
     name: 'Dashboard',
   },
   {
     path: 'wallet',
-    to: '/wallet',
+    to: '/admin/wallet',
     name: 'Wallet',
-  }
+  },
+  {
+    path: 'create',
+    to: '/admin/wallet/create',
+    name: 'Wallet',
+  },
 ];
 
 export const findRoute = (pathname: string): RouteApp => {

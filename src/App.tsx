@@ -7,6 +7,8 @@ import { Admin } from './components/layouts/Admin/Admin';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { CreateProfile } from './views/Profile/CreateProfile/CreateProfile';
 import { PrivateRoute } from './routes/PrivateRoute';
+import { CreateWallet } from './views/Wallet/CretateWallet/CreateWallet';
+
 
 const App = () => {
   return (
@@ -22,6 +24,14 @@ const App = () => {
 
           <Route path="profile/create" element={<CreateProfile />} />
         </Route>
+      </Route>
+      <Route path="/admin" element={<Admin />}>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="wallet">
+        <Route path="" element={<Wallet />}/>
+        <Route path="create" element={<CreateWallet/>}/>
+        </Route>
+        <Route path="*" element={<Navigate to="dashboard" />} />
       </Route>
     </Routes>
   );
